@@ -8,6 +8,7 @@
                 :class="errorClasses"
                 :placeholder="field.name"
                 v-model="value"
+                v-bind="extraAttributes"
             />
         </template>
     </default-field>
@@ -43,5 +44,14 @@ export default {
             this.value = value
         },
     },
+
+    computed: {
+
+        extraAttributes() {
+            return {
+                ...this.field.extraAttributes
+            }
+        }
+    }
 }
 </script>
