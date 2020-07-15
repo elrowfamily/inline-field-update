@@ -48,8 +48,11 @@ export default {
     computed: {
 
         extraAttributes() {
+
+            const attrs = this.field.extraAttributes
+
             return {
-                ...this.field.extraAttributes
+                ...attrs,
             }
         }
     }
