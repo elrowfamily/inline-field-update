@@ -3,11 +3,11 @@
         <input
             :id="field.name"
             type="text"
-            class="w-full form-control form-input form-input-bordered live-update"
+            class="form-control form-input form-input-bordered live-update"
             :placeholder="field.name"
             v-model="value"
             @blur="save"
-            v-bind="extraAttributes"
+            v-bind="field.extraAttributes"
         />
         <!-- thanks to https://github.com/epartment/nova-unique-ajax-field/blob/master/resources/js/components/FormField.vue -->
         <div class="absolute rotating text-80 flex justify-center items-center pin-y pin-r mr-3" v-show="loading">
@@ -72,14 +72,6 @@ export default {
             this.value = value
         },
     },
-    computed: {
-
-        extraAttributes() {
-            return {
-                ...this.field.extraAttributes
-            }
-        }
-    }
 }
 </script>
 
