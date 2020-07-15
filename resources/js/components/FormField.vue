@@ -4,11 +4,11 @@
             <input
                 :id="field.name"
                 type="text"
-                class="w-full form-control form-input form-input-bordered"
+                class="form-control form-input form-input-bordered"
                 :class="errorClasses"
                 :placeholder="field.name"
                 v-model="value"
-                v-bind="extraAttributes"
+                v-bind="field.extraAttributes"
             />
         </template>
     </default-field>
@@ -44,17 +44,5 @@ export default {
             this.value = value
         },
     },
-
-    computed: {
-
-        extraAttributes() {
-
-            const attrs = this.field.extraAttributes
-
-            return {
-                ...attrs,
-            }
-        }
-    }
 }
 </script>
